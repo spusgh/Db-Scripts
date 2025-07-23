@@ -3,12 +3,12 @@ A FINRA-compliant loan origination, risk scoring, servicing, and capital markets
 
 ## 🧭 System Architecture Overview
 #### Mermaid Diagram
-![image](https://github.com/spusgh/Db-Scripts/tree/main/DbModels/Mermaid_Live_Editor-MSPowerPlatformLoanEcosystem-SystemArchitectureOverview.png)
+![image](https://github.com/spusgh/Db-Scripts/blob/main/DbModels/Mermaid_Live_Editor-MSPowerPlatformLoanEcosystem-SystemArchitecture.png)
 
 
 ## 🔄 Loan Origination & Servicing Workflow
 #### Mermaid Diagram
-![image](https://github.com/spusgh/Db-Scripts/tree/main/DbModels/Mermaid_Live_Editor-MSPowerPlatformLoanEcosystem-LoanOriginationServicingWorkflowOverview.png)
+![image](https://github.com/spusgh/Db-Scripts/blob/main/DbModels/Mermaid_Live_Editor-MSPowerPlatformLoanEcosystem-LoanOriginationServicingWorkflow.png)
 
 
 ## 🧬 Data Lineage Highlights (Key Attributes)
