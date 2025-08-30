@@ -2,6 +2,7 @@
 
 ### MS SQL Databases
 <li><a href="https://github.com/spusgh/Db-Scripts/blob/main/CreditDatabase/CreditDB_Schema.sql"> Credit Database Schema Scripts </a></li>
+<li><a href="https://github.com/spusgh/Db-Scripts/blob/main/MediaEnt/MediaEntDB.sql"> Media Entertain DB Schema Scripts </a></li>
 
 ### Azure COSMOS DB
 
