@@ -1,0 +1,11 @@
+{
+  "loanId": 100000,
+  "applicationId": 10000,
+  "customerId": 1001,
+  "loanAmount": { "$numberDecimal": "550000.00" },
+  "interestRate": { "$numberDecimal": "6.125" },
+  "term": 360,
+  "status": "Active",
+  "monthlyPayment": { "$numberDecimal": "3350.45" },
+  "nextPaymentDate": { "$date": "2026-01-01T00:00:00Z" }
+}

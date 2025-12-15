@@ -1,0 +1,18 @@
+{
+  "_id": { "$oid": "665f9a4e1a2b3c4d5e6f7081" },
+  "customerId": 1001,
+  "firstName": "Asha",
+  "lastName": "Rao",
+  "ssn": "123-45-6789",
+  "dateOfBirth": { "$date": "1988-03-12T00:00:00Z" },
+  "email": "asha.rao@example.com",
+  "annualIncome": { "$numberDecimal": "145000.00" },
+  "creditScore": 742,
+  "primaryAddress": {
+    "addressLine1": "101 Market St",
+    "city": "Frederick",
+    "state": "MD",
+    "zipCode": "21701",
+    "country": "USA"
+  }
+}

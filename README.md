@@ -7,7 +7,7 @@
 ### Azure COSMOS DB
 
 ### MongoDB Databases
-
+<li><a href="https://github.com/spusgh/Db-Scripts/blob/main/XYZFinancialssecuritiesMongoDB/"> XYZ Financials MongoDB Database </a></li>
 </br>
 
 # Data Models

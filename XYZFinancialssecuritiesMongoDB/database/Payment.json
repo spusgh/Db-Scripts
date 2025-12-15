@@ -1,0 +1,10 @@
+{
+  "paymentId": 1,
+  "loanId": 100000,
+  "paymentDate": { "$date": "2025-12-01T00:00:00Z" },
+  "paymentAmount": { "$numberDecimal": "3470.45" },
+  "principalAmount": { "$numberDecimal": "1200.45" },
+  "interestAmount": { "$numberDecimal": "2150.00" },
+  "escrowAmount": { "$numberDecimal": "120.00" },
+  "paymentStatus": "Processed"
+}

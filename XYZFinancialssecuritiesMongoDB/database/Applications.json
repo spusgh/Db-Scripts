@@ -1,0 +1,23 @@
+{
+  "bsonType": "object",
+  "required": ["_id", "applicationId", "customerId", "applicationDate", "status"],
+  "properties": {
+    "_id": { "bsonType": "objectId" },
+    "applicationId": { "bsonType": "int" },
+    "customerId": { "bsonType": "int" },
+    "productId": { "bsonType": "int" },
+    "officerId": { "bsonType": "int" },
+    "applicationDate": { "bsonType": "date" },
+    "loanAmount": { "bsonType": ["double", "decimal"] },
+    "loanPurpose": { "bsonType": "string" },
+    "status": { "enum": ["Submitted", "InReview", "Approved", "Denied", "Closed"] },
+    "closingDate": { "bsonType": "date" },
+    "applicationFee": { "bsonType": ["double", "decimal"] },
+    "dti": { "bsonType": ["double", "decimal"] },
+    "propertyValue": { "bsonType": ["double", "decimal"] },
+    "ltv": { "bsonType": ["double", "decimal"] },
+    "rateOffered": { "bsonType": ["double", "decimal"] },
+    "termOffered": { "bsonType": "int" },
+    "denialReason": { "bsonType": "string" }
+  }
+}
