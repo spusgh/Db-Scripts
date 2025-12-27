@@ -1,14 +1,88 @@
 ﻿# Databases
 
-### MS SQL Databases
+## NoSQL Databases
+### Amazon DynamoDB
+<li><a href="./dynamodb_XYZFinancialSecurities_schema.js"> XYZ Financials DynamoDB Database </a></li>
+
+### Azure CosmosDB
+<li><a href="./cosmosdb_XYZFinancialSecurities_schema.js"> XYZ Financials CosmosDB Database </a></li>
+
+### Cassandra
+<li><a href="./cassandra_XYZFinancialSecurities_schema.sql"> XYZ Financials Cassandra Database </a></li>
+
+### HBase
+
+### MongoDB Atlas
+<li><a href="https://github.com/spusgh/Db-Scripts/blob/main/XYZFinancialssecuritiesMongoDB/"> XYZ Financials MongoDB Database </a></li>
+<li><a href="https://github.com/spusgh/Db-Scripts/blob/main/XYZFinancialssecuritiesMongoDB/database/mongodb_XYZFinancialSecurities_schema.js"> XYZ Financials MongoDB Database Schema </a></li>
+
+## <li><a href="./vector_db_overview.md">Vector Databases</a></li>
+(these are optimized for embeddings, semantic search, RAG, and agentic AI)
+
+### ChromaDB
+<li><a href="./chromadb_XYZFinancialsSecurities_schema.py"> XYZ Financials ChromaDB Database </a></li>
+
+### Elasticsearch (supports vector search; hybrid search engine + DB)
+### Milvus
+### Pinecone
+### Qdrant
+### Redis Vector (Redis with vector search module)
+<li><a href="./redis_vector_XYZFinancialsSecurities_schema.py"> XYZ Financials Redis Database </a></li>
+
+### Weaviate
+
+## Geospatial Databases
+(optimized for spatial indexing, GIS workloads, and location intelligence)
+
+### Cassandra with GeoMesa
+### Google BigQuery GIS (SQL + geospatial functions)
+### HBase with GeoMesa
+### MongoDB (native geospatial indexing)
+### Oracle Spatial & Graph
+### PostGIS (PostgreSQL extension)
+### Spatialite (SQLite geospatial extension)
+
+
+## Distributed SQL / MPP Databases
+
+### Apache Hive
+### Apache Impala
+### Azure Synapse (SQL Pools)
+### PrestoDB (federated SQL query engine, often used as a DB layer)
+### Snowflake
+
+
+## Relational Databases (RDBMS)
+### Azure SQL
+### MySQL
+### MS SQL BI (SQL Server ecosystem)
+### MS SQL Server
 <li><a href="https://github.com/spusgh/Db-Scripts/blob/main/CreditDatabase/CreditDB_Schema.sql"> Credit Database Schema Scripts </a></li>
 <li><a href="https://github.com/spusgh/Db-Scripts/blob/main/MediaEntDatabase/MediaEntDB.sql"> Media Entertain DB Schema Scripts </a></li>
+<li><a href="https://github.com/spusgh/Db-Scripts/blob/main/XYZFinancialssecurities/XYZ_Financials_Securities_Schema_AllObjects.sql"> XYZ Financials Securities Schema AllObjects DB Schema Scripts </a></li>
 
-### Azure COSMOS DB
+### Oracle Database
+### PostgreSQL
 
-### MongoDB Databases
-<li><a href="https://github.com/spusgh/Db-Scripts/blob/main/XYZFinancialssecuritiesMongoDB/"> XYZ Financials MongoDB Database </a></li>
-</br>
+
+## Data Lake / Storage Engines (database‑like)
+### Azure Data Lake Storage (ADLS)
+### Apache Hadoop (HDFS)
+
+
+## Event/Stream Systems 
+That Are Not Databases (but often mistaken as such). These are NOT databases, but many teams incorrectly categorize them as data stores:
+
+### Apache Kafka
+
+### Apache Flink
+
+### Apache Spark
+
+### Apache Storm
+
+
+
 
 # Data Models
 ## Diagramming and charting tool
