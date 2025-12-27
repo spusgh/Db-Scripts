@@ -1,0 +1,203 @@
+{
+  "mappings": {
+    "customers": {
+      "properties": {
+        "customer_id": { "type": "keyword" },
+        "full_name": { "type": "text" },
+        "first_name": { "type": "text" },
+        "last_name": { "type": "text" },
+        "ssn_encrypted": { "type": "keyword", "index": false },
+        "date_of_birth": { "type": "date" },
+        "email": { "type": "keyword" },
+        "phone": { "type": "keyword" },
+        "annual_income": { "type": "double" },
+        "employment_status": { "type": "keyword" },
+        "employer": { "type": "text" },
+        "years_employed": { "type": "integer" },
+        "credit_score": { "type": "integer" },
+        "created_date": { "type": "date" },
+        "last_updated_date": { "type": "date" },
+        "customer_embedding": {
+          "type": "dense_vector",
+          "dims": 768,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "customer_profile_text": { "type": "text" }
+      }
+    },
+    "loans": {
+      "properties": {
+        "loan_id": { "type": "keyword" },
+        "application_id": { "type": "keyword" },
+        "customer_id": { "type": "keyword" },
+        "property_id": { "type": "keyword" },
+        "product_id": { "type": "keyword" },
+        "loan_amount": { "type": "double" },
+        "interest_rate": { "type": "double" },
+        "term": { "type": "integer" },
+        "origination_date": { "type": "date" },
+        "maturity_date": { "type": "date" },
+        "monthly_payment": { "type": "double" },
+        "remaining_balance": { "type": "double" },
+        "status": { "type": "keyword" },
+        "escrow_required": { "type": "boolean" },
+        "pmi_required": { "type": "boolean" },
+        "pmi_amount": { "type": "double" },
+        "first_payment_date": { "type": "date" },
+        "next_payment_date": { "type": "date" },
+        "payment_frequency": { "type": "keyword" },
+        "security_id": { "type": "keyword" },
+        "last_updated_date": { "type": "date" },
+        "loan_embedding": {
+          "type": "dense_vector",
+          "dims": 768,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "loan_summary_text": { "type": "text" }
+      }
+    },
+    "properties": {
+      "properties": {
+        "property_id": { "type": "keyword" },
+        "address": { "type": "text" },
+        "address_line1": { "type": "text" },
+        "address_line2": { "type": "text" },
+        "city": { "type": "keyword" },
+        "state": { "type": "keyword" },
+        "zip_code": { "type": "keyword" },
+        "country": { "type": "keyword" },
+        "property_type": { "type": "keyword" },
+        "year_built": { "type": "integer" },
+        "square_feet": { "type": "integer" },
+        "bedrooms": { "type": "integer" },
+        "bathrooms": { "type": "float" },
+        "purchase_price": { "type": "double" },
+        "current_value": { "type": "double" },
+        "last_appraisal_date": { "type": "date" },
+        "last_appraisal_value": { "type": "double" },
+        "tax_assessment_value": { "type": "double" },
+        "annual_tax_amount": { "type": "double" },
+        "hoa_fees": { "type": "double" },
+        "flood_zone": { "type": "keyword" },
+        "property_tax_id": { "type": "keyword" },
+        "location": { "type": "geo_point" },
+        "property_embedding": {
+          "type": "dense_vector",
+          "dims": 768,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "property_description_text": { "type": "text" }
+      }
+    },
+    "payments": {
+      "properties": {
+        "payment_id": { "type": "keyword" },
+        "loan_id": { "type": "keyword" },
+        "payment_date": { "type": "date" },
+        "payment_amount": { "type": "double" },
+        "principal_amount": { "type": "double" },
+        "interest_amount": { "type": "double" },
+        "escrow_amount": { "type": "double" },
+        "late_fee_amount": { "type": "double" },
+        "payment_method": { "type": "keyword" },
+        "transaction_id": { "type": "keyword" },
+        "payment_status": { "type": "keyword" },
+        "processed_date": { "type": "date" }
+      }
+    },
+    "securities": {
+      "properties": {
+        "security_id": { "type": "keyword" },
+        "security_name": { "type": "text" },
+        "security_type": { "type": "keyword" },
+        "cusip": { "type": "keyword" },
+        "issue_date": { "type": "date" },
+        "maturity_date": { "type": "date" },
+        "coupon_rate": { "type": "double" },
+        "face_value": { "type": "double" },
+        "current_balance": { "type": "double" },
+        "issuer": { "type": "text" },
+        "rating": { "type": "keyword" },
+        "status": { "type": "keyword" },
+        "last_trade_date": { "type": "date" },
+        "last_trade_price": { "type": "double" },
+        "security_embedding": {
+          "type": "dense_vector",
+          "dims": 768,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "security_description_text": { "type": "text" }
+      }
+    },
+    "applications": {
+      "properties": {
+        "application_id": { "type": "keyword" },
+        "customer_id": { "type": "keyword" },
+        "product_id": { "type": "keyword" },
+        "officer_id": { "type": "keyword" },
+        "application_date": { "type": "date" },
+        "loan_amount": { "type": "double" },
+        "loan_purpose": { "type": "keyword" },
+        "status": { "type": "keyword" },
+        "closing_date": { "type": "date" },
+        "application_fee": { "type": "double" },
+        "dti": { "type": "double" },
+        "property_value": { "type": "double" },
+        "ltv": { "type": "double" },
+        "rate_offered": { "type": "double" },
+        "term_offered": { "type": "integer" },
+        "denial_reason": { "type": "text" },
+        "application_embedding": {
+          "type": "dense_vector",
+          "dims": 768,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "application_summary_text": { "type": "text" }
+      }
+    },
+    "documents": {
+      "properties": {
+        "document_id": { "type": "keyword" },
+        "application_id": { "type": "keyword" },
+        "document_type": { "type": "keyword" },
+        "file_name": { "type": "text" },
+        "file_location": { "type": "keyword", "index": false },
+        "upload_date": { "type": "date" },
+        "required_flag": { "type": "boolean" },
+        "received_flag": { "type": "boolean" },
+        "approval_status": { "type": "keyword" },
+        "approval_date": { "type": "date" },
+        "approved_by": { "type": "keyword" },
+        "notes": { "type": "text" },
+        "document_content_embedding": {
+          "type": "dense_vector",
+          "dims": 768,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "document_text_content": { "type": "text" }
+      }
+    }
+  },
+  "settings": {
+    "index": {
+      "number_of_shards": 3,
+      "number_of_replicas": 2,
+      "refresh_interval": "1s"
+    },
+    "analysis": {
+      "analyzer": {
+        "financial_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["lowercase", "stop", "snowball"]
+        }
+      }
+    }
+  }
+}

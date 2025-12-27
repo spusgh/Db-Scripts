@@ -11,6 +11,7 @@
 <li><a href="./cassandra_XYZFinancialSecurities_schema.sql"> XYZ Financials Cassandra Database </a></li>
 
 ### HBase
+<li><a href="./hbase_XYZFinancialsSecurities_schema.py"> XYZ Financials HBase Database </a></li>
 
 ### MongoDB Atlas
 <li><a href="https://github.com/spusgh/Db-Scripts/blob/main/XYZFinancialssecuritiesMongoDB/"> XYZ Financials MongoDB Database </a></li>
@@ -23,13 +24,22 @@
 <li><a href="./chromadb_XYZFinancialsSecurities_schema.py"> XYZ Financials ChromaDB Database </a></li>
 
 ### Elasticsearch (supports vector search; hybrid search engine + DB)
+<li><a href="./elasticsearch_XYZFinancialsSecurities_schema.json"> XYZ Financials Elasticsearch Database </a></li>
+
 ### Milvus
+<li><a href="milvus_XYZFinancialsSecurities_schema.py"> XYZ Financials Milvus Database </a></li>
+
 ### Pinecone
+<li><a href="./pinecone_XYZFinancialsSecurities_schema.py"> XYZ Financials Pinecone Database </a></li>
+
 ### Qdrant
+<li><a href="./qdrant_XYZFinancialsSecurities_schema.py"> XYZ Financials Qdrant Database </a></li>
+
 ### Redis Vector (Redis with vector search module)
 <li><a href="./redis_vector_XYZFinancialsSecurities_schema.py"> XYZ Financials Redis Database </a></li>
 
 ### Weaviate
+<li><a href="./weaviate_XYZFinancialsSecurities_schema.py"> XYZ Financials Weaviate Database </a></li>
 
 ## Geospatial Databases
 (optimized for spatial indexing, GIS workloads, and location intelligence)
@@ -59,7 +69,7 @@
 ### MS SQL Server
 <li><a href="https://github.com/spusgh/Db-Scripts/blob/main/CreditDatabase/CreditDB_Schema.sql"> Credit Database Schema Scripts </a></li>
 <li><a href="https://github.com/spusgh/Db-Scripts/blob/main/MediaEntDatabase/MediaEntDB.sql"> Media Entertain DB Schema Scripts </a></li>
-<li><a href="https://github.com/spusgh/Db-Scripts/blob/main/XYZFinancialssecurities/XYZ_Financials_Securities_Schema_AllObjects.sql"> XYZ Financials Securities Schema AllObjects DB Schema Scripts </a></li>
+<li><a href="https://github.com/spusgh/Db-Scripts/blob/main/XYZFinancialssecurities/XYZ_Financials_Securities_Schema_AllObjects.sql"> XYZ Financials Securities Schema DB Schema Scripts </a></li>
 
 ### Oracle Database
 ### PostgreSQL
