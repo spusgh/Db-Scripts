@@ -56,23 +56,40 @@
 ## Distributed SQL / MPP Databases
 
 ### Apache Hive
+<li><a href="./hive_XYZFinancialSecurities_schema.sql"> XYZ Financials Hive Database </a></li>
+
 ### Apache Impala
+<li><a href="./impala_XYZFinancialSecurities_schema.sql"> XYZ Financials Impala Database </a></li>
+
 ### Azure Synapse (SQL Pools)
+
 ### PrestoDB (federated SQL query engine, often used as a DB layer)
+<li><a href="./presto_XYZFinancialSecurities_schema.sql"> XYZ Financials PrestoDB Database </a></li>
+
 ### Snowflake
+<li><a href="./snowflake_XYZFinancialSecurities_schema.sql"> XYZ Financials Snowflake Database </a></li>
 
 
 ## Relational Databases (RDBMS)
 ### Azure SQL
+<li><a href="./azure_sql_XYZFinancialSecurities_schema.sql"> XYZ Financials Azure SQL Database </a></li>
+
 ### MySQL
+<li><a href="./mysql_XYZFinancialSecurities_schema.sql"> XYZ Financials MySQL Database </a></li>
+
 ### MS SQL BI (SQL Server ecosystem)
+<li><a href="./mssql_bi_XYZFinancialSecurities_schema.sql"> XYZ Financials MS SQL BI Database </a></li>
+
 ### MS SQL Server
 <li><a href="https://github.com/spusgh/Db-Scripts/blob/main/CreditDatabase/CreditDB_Schema.sql"> Credit Database Schema Scripts </a></li>
 <li><a href="https://github.com/spusgh/Db-Scripts/blob/main/MediaEntDatabase/MediaEntDB.sql"> Media Entertain DB Schema Scripts </a></li>
 <li><a href="https://github.com/spusgh/Db-Scripts/blob/main/XYZFinancialssecurities/XYZ_Financials_Securities_Schema_AllObjects.sql"> XYZ Financials Securities Schema DB Schema Scripts </a></li>
 
 ### Oracle Database
+<li><a href="./oracle_XYZFinancialSecurities_schema.sql"> XYZ Financials Oracle Database </a></li>
+
 ### PostgreSQL
+<li><a href="./postgresql_XYZFinancialSecurities_schema.sql"> XYZ Financials PostgreSQL Database </a></li>
 
 
 ## Data Lake / Storage Engines (database‑like)
