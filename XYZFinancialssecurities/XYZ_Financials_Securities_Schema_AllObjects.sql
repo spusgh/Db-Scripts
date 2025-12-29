@@ -1,3 +1,4 @@
+
 USE [master]
 GO
 /****** Object:  Database [XYZ_Financials_Securities]    Script Date: 12/27/2025 11:23:13 AM ******/
