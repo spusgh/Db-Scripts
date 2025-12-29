@@ -1,3 +1,4 @@
+
 // =============================================
 // Azure Cosmos DB Schema Design for XYZ Financials Securities
 // =============================================

@@ -1,3 +1,4 @@
+
 -- =============================================
 -- PrestoDB Complete Schema for XYZ_Financials_Securities
 -- Federated SQL Query Engine

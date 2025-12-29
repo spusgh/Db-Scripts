@@ -1,3 +1,4 @@
+
 """
 Weaviate Vector Database Schema for XYZ Financials Securities
 """

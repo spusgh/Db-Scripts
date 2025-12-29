@@ -6,7 +6,10 @@
         "full_name": { "type": "text" },
         "first_name": { "type": "text" },
         "last_name": { "type": "text" },
-        "ssn_encrypted": { "type": "keyword", "index": false },
+        "ssn_encrypted": {
+          "type": "keyword",
+          "index": false
+        },
         "date_of_birth": { "type": "date" },
         "email": { "type": "keyword" },
         "phone": { "type": "keyword" },
@@ -166,7 +169,10 @@
         "application_id": { "type": "keyword" },
         "document_type": { "type": "keyword" },
         "file_name": { "type": "text" },
-        "file_location": { "type": "keyword", "index": false },
+        "file_location": {
+          "type": "keyword",
+          "index": false
+        },
         "upload_date": { "type": "date" },
         "required_flag": { "type": "boolean" },
         "received_flag": { "type": "boolean" },
@@ -195,7 +201,7 @@
         "financial_analyzer": {
           "type": "custom",
           "tokenizer": "standard",
-          "filter": ["lowercase", "stop", "snowball"]
+          "filter": [ "lowercase", "stop", "snowball" ]
         }
       }
     }

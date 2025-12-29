@@ -1,3 +1,4 @@
+
 -- Azure SQL Database Schema for XYZ_Financials_Securities
 -- Identical syntax to SQL Server but with Azure-specific optimizations
 

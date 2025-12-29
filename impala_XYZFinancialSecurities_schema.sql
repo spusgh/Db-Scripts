@@ -1,3 +1,4 @@
+
 -- =============================================
 -- Apache Impala Complete Schema for XYZ_Financials_Securities
 -- Compatible with Impala 3.x+

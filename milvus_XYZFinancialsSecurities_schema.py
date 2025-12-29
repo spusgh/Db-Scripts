@@ -1,3 +1,4 @@
+
 """
 Milvus Vector Database Schema for XYZ Financials Securities
 Save as: milvus_schema.py

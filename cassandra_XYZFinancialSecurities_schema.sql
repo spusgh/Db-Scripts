@@ -1,3 +1,4 @@
+
 -- =============================================
 -- Apache Cassandra Schema Design for XYZ Financials Securities
 -- =============================================

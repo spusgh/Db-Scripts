@@ -1,3 +1,4 @@
+
 -- =============================================
 -- MySQL Complete Schema for XYZ_Financials_Securities
 -- Compatible with MySQL 8.0+

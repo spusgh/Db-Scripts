@@ -1,3 +1,4 @@
+
 """
 Pinecone Vector Database Schema for XYZ Financials Securities
 Save as: pinecone_schema.py

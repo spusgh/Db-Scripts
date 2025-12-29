@@ -1,3 +1,4 @@
+
 -- MS SQL Server Business Intelligence / Data Warehouse Schema
 -- Star Schema design optimized for analytics and reporting
 -- For XYZ_Financials_Securities

@@ -1,3 +1,4 @@
+
 -- Apache Hive Schema for XYZ_Financials_Securities
 -- Note: Hive doesn't support many RDBMS features like foreign keys, constraints, sequences
 -- This schema focuses on table structures optimized for Hive

@@ -1,3 +1,4 @@
+
 """
 ChromaDB Schema for XYZ Financials Securities
 ==============================================

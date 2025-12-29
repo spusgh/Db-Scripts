@@ -1,3 +1,4 @@
+
 """
 Redis Vector Search Schema for XYZ Financials Securities
 =========================================================

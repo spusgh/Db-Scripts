@@ -1,3 +1,4 @@
+
 // =============================================
 // AWS DynamoDB Schema Design for XYZ Financials Securities
 // =============================================

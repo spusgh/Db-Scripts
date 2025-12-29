@@ -1,3 +1,4 @@
+
 """
 HBase Schema for XYZ Financials Securities
 Save as: hbase_schema.py

@@ -1,3 +1,4 @@
+
 """
 Qdrant Vector Database Schema for XYZ Financials Securities
 Save as: qdrant_schema.py

@@ -1,3 +1,4 @@
+
 # Vector Database Architecture for XYZ Financials Securities
 
 ## Overview

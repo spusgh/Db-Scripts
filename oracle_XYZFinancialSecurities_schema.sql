@@ -1,3 +1,4 @@
+
 -- =============================================
 -- Oracle Database Complete Schema for XYZ_Financials_Securities
 -- Compatible with Oracle 12c+

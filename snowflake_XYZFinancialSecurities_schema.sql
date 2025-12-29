@@ -1,3 +1,4 @@
+
 -- Snowflake Schema for XYZ_Financials_Securities
 -- Optimized for Snowflake's cloud data warehouse architecture
 

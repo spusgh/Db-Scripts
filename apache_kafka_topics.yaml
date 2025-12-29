@@ -1,0 +1,313 @@
+
+# Apache Kafka Topic Configurations for XYZ_Financials_Securities
+# These topics represent the main entities and event streams
+
+# ==========================================
+# CORE ENTITY TOPICS
+# ==========================================
+
+# Customer Events
+- topic: customers
+  partitions: 10
+  replication-factor: 3
+  config:
+    retention.ms: -1  # Infinite retention (compacted)
+    cleanup.policy: compact
+    compression.type: snappy
+  schema:
+    type: avro
+    fields:
+      - {name: customer_id, type: int}
+      - {name: first_name, type: string}
+      - {name: last_name, type: string}
+      - {name: ssn, type: string}
+      - {name: date_of_birth, type: string}
+      - {name: email, type: [null, string]}
+      - {name: phone, type: [null, string]}
+      - {name: annual_income, type: [null, double]}
+      - {name: employment_status, type: [null, string]}
+      - {name: employer, type: [null, string]}
+      - {name: years_employed, type: [null, int]}
+      - {name: credit_score, type: [null, int]}
+      - {name: created_date, type: long}
+      - {name: last_updated_date, type: long}
+
+# Loan Application Events
+- topic: loan-applications
+  partitions: 10
+  replication-factor: 3
+  config:
+    retention.ms: 2592000000  # 30 days
+    cleanup.policy: delete
+    compression.type: lz4
+  schema:
+    type: avro
+    fields:
+      - {name: application_id, type: int}
+      - {name: customer_id, type: int}
+      - {name: product_id, type: int}
+      - {name: officer_id, type: int}
+      - {name: application_date, type: long}
+      - {name: loan_amount, type: double}
+      - {name: loan_purpose, type: string}
+      - {name: status, type: string}
+      - {name: dti, type: [null, double]}
+      - {name: property_value, type: [null, double]}
+      - {name: ltv, type: [null, double]}
+
+# Loan Events
+- topic: loans
+  partitions: 20
+  replication-factor: 3
+  config:
+    retention.ms: -1
+    cleanup.policy: compact
+    compression.type: snappy
+    min.insync.replicas: 2
+  schema:
+    type: avro
+    fields:
+      - {name: loan_id, type: int}
+      - {name: application_id, type: int}
+      - {name: customer_id, type: int}
+      - {name: property_id, type: int}
+      - {name: product_id, type: int}
+      - {name: loan_amount, type: double}
+      - {name: interest_rate, type: double}
+      - {name: term, type: int}
+      - {name: origination_date, type: long}
+      - {name: maturity_date, type: long}
+      - {name: monthly_payment, type: double}
+      - {name: remaining_balance, type: double}
+      - {name: status, type: string}
+      - {name: security_id, type: [null, int]}
+
+# Payment Events (High Volume)
+- topic: payments
+  partitions: 30
+  replication-factor: 3
+  config:
+    retention.ms: 7776000000  # 90 days
+    cleanup.policy: delete
+    compression.type: lz4
+    segment.ms: 86400000  # 1 day segments
+  schema:
+    type: avro
+    fields:
+      - {name: payment_id, type: int}
+      - {name: loan_id, type: int}
+      - {name: payment_date, type: long}
+      - {name: payment_amount, type: double}
+      - {name: principal_amount, type: double}
+      - {name: interest_amount, type: double}
+      - {name: escrow_amount, type: [null, double]}
+      - {name: late_fee_amount, type: [null, double]}
+      - {name: payment_method, type: string}
+      - {name: transaction_id, type: string}
+      - {name: payment_status, type: string}
+      - {name: processed_date, type: long}
+
+# Property Details
+- topic: properties
+  partitions: 10
+  replication-factor: 3
+  config:
+    retention.ms: -1
+    cleanup.policy: compact
+    compression.type: snappy
+  schema:
+    type: avro
+    fields:
+      - {name: property_id, type: int}
+      - {name: address_line1, type: string}
+      - {name: city, type: string}
+      - {name: state, type: string}
+      - {name: zip_code, type: string}
+      - {name: property_type, type: string}
+      - {name: year_built, type: [null, int]}
+      - {name: square_feet, type: [null, int]}
+      - {name: purchase_price, type: [null, double]}
+      - {name: current_value, type: [null, double]}
+      - {name: flood_zone, type: [null, string]}
+
+# ==========================================
+# EVENT STREAM TOPICS
+# ==========================================
+
+# Risk Assessment Events
+- topic: risk-assessments
+  partitions: 10
+  replication-factor: 3
+  config:
+    retention.ms: 15552000000  # 180 days
+    cleanup.policy: delete
+    compression.type: snappy
+  schema:
+    type: avro
+    fields:
+      - {name: assessment_id, type: int}
+      - {name: customer_id, type: int}
+      - {name: application_id, type: int}
+      - {name: assessment_date, type: long}
+      - {name: credit_score, type: int}
+      - {name: dti, type: double}
+      - {name: ltv, type: double}
+      - {name: risk_classification, type: string}
+      - {name: recommended_action, type: string}
+
+# Default and Foreclosure Events
+- topic: defaults-foreclosures
+  partitions: 5
+  replication-factor: 3
+  config:
+    retention.ms: 31536000000  # 365 days
+    cleanup.policy: delete
+    compression.type: snappy
+  schema:
+    type: avro
+    fields:
+      - {name: default_id, type: int}
+      - {name: loan_id, type: int}
+      - {name: default_date, type: long}
+      - {name: stage, type: string}
+      - {name: reason_code, type: [null, string]}
+      - {name: resolution_type, type: [null, string]}
+      - {name: loss_amount, type: [null, double]}
+
+# Escrow Transactions
+- topic: escrow-transactions
+  partitions: 10
+  replication-factor: 3
+  config:
+    retention.ms: 7776000000  # 90 days
+    cleanup.policy: delete
+    compression.type: lz4
+  schema:
+    type: avro
+    fields:
+      - {name: transaction_id, type: int}
+      - {name: escrow_id, type: int}
+      - {name: loan_id, type: int}
+      - {name: transaction_date, type: long}
+      - {name: transaction_type, type: string}
+      - {name: amount, type: double}
+      - {name: description, type: string}
+
+# Securities Events
+- topic: securities
+  partitions: 5
+  replication-factor: 3
+  config:
+    retention.ms: -1
+    cleanup.policy: compact
+    compression.type: snappy
+  schema:
+    type: avro
+    fields:
+      - {name: security_id, type: int}
+      - {name: security_name, type: string}
+      - {name: security_type, type: string}
+      - {name: cusip, type: string}
+      - {name: issue_date, type: long}
+      - {name: maturity_date, type: long}
+      - {name: coupon_rate, type: double}
+      - {name: face_value, type: double}
+      - {name: current_balance, type: double}
+
+# ==========================================
+# DERIVED/ANALYTICS TOPICS
+# ==========================================
+
+# Delinquency Alerts
+- topic: delinquency-alerts
+  partitions: 10
+  replication-factor: 3
+  config:
+    retention.ms: 2592000000  # 30 days
+    cleanup.policy: delete
+    compression.type: lz4
+  schema:
+    type: avro
+    fields:
+      - {name: loan_id, type: int}
+      - {name: customer_id, type: int}
+      - {name: days_past_due, type: int}
+      - {name: delinquency_bucket, type: string}
+      - {name: alert_timestamp, type: long}
+      - {name: outstanding_balance, type: double}
+
+# Portfolio Metrics (Aggregated)
+- topic: portfolio-metrics
+  partitions: 5
+  replication-factor: 3
+  config:
+    retention.ms: 7776000000  # 90 days
+    cleanup.policy: delete
+    compression.type: snappy
+  schema:
+    type: avro
+    fields:
+      - {name: metric_id, type: string}
+      - {name: metric_date, type: long}
+      - {name: total_active_loans, type: int}
+      - {name: total_loan_amount, type: double}
+      - {name: total_outstanding_balance, type: double}
+      - {name: average_interest_rate, type: double}
+      - {name: delinquency_rate, type: double}
+
+# Loan Modifications
+- topic: loan-modifications
+  partitions: 5
+  replication-factor: 3
+  config:
+    retention.ms: 15552000000  # 180 days
+    cleanup.policy: delete
+    compression.type: snappy
+  schema:
+    type: avro
+    fields:
+      - {name: modification_id, type: int}
+      - {name: loan_id, type: int}
+      - {name: modification_date, type: long}
+      - {name: modification_type, type: string}
+      - {name: previous_interest_rate, type: [null, double]}
+      - {name: new_interest_rate, type: [null, double]}
+      - {name: approval_status, type: string}
+
+# Audit Log Stream
+- topic: audit-log
+  partitions: 15
+  replication-factor: 3
+  config:
+    retention.ms: 31536000000  # 365 days
+    cleanup.policy: delete
+    compression.type: lz4
+  schema:
+    type: avro
+    fields:
+      - {name: log_id, type: int}
+      - {name: entity_type, type: string}
+      - {name: entity_id, type: int}
+      - {name: action_type, type: string}
+      - {name: action_datetime, type: long}
+      - {name: user_id, type: string}
+      - {name: ip_address, type: [null, string]}
+
+# ==========================================
+# CONNECT CONFIGURATIONS
+# ==========================================
+
+# Kafka Connect Source Connector (SQL Server CDC)
+kafka-connect-source:
+  name: sqlserver-cdc-source
+  connector.class: io.debezium.connector.sqlserver.SqlServerConnector
+  database.hostname: ${DB_HOST}
+  database.port: 1433
+  database.user: ${DB_USER}
+  database.password: ${DB_PASSWORD}
+  database.dbname: XYZ_Financials_Securities
+  database.server.name: xyz_financials
+  table.include.list: dbo.Customers,dbo.Loans,dbo.Payments,dbo.Applications,dbo.PropertyDetails
+  snapshot.mode: initial
+  transforms: unwrap
+  transforms.unwrap.type: io.debezium.transforms.ExtractNewRecordState
