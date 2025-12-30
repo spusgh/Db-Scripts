@@ -4,10 +4,8 @@
 
 ## Data Lake / Storage Engines (database‑like)
 
-### Azure Data Lake Storage (ADLS)
-
-
-### Apache Hadoop (HDFS)
+### Azure Data Lake Storage (ADLS) & Apache Hadoop (HDFS)
+<li><a href="./adls_hdfs_migration.md"> ADLS & HDFS - XYZ Financials Database Migration</a></li>
 
 ---
 
