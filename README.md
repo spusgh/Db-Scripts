@@ -52,12 +52,25 @@ That Are Not Databases (but often mistaken as such). These are NOT databases, bu
 (optimized for spatial indexing, GIS workloads, and location intelligence)
 
 ### Cassandra with GeoMesa
+<li><a href="./cassandra_geomesa_ddl.sql"> Cassandra  GeoMesa </a></li>
+
 ### Google BigQuery GIS (SQL + geospatial functions)
+<li><a href="./bigqueryGISddl.sql"> BigQuery GIS </a></li>
+
 ### HBase with GeoMesa
+<li><a href="./hbase_geomesa_ddl.rb"> HBase GeoMesa </a></li>
+
 ### MongoDB (native geospatial indexing)
+<li><a href="./MongoDBnative2dspheregeospatialindexingschema.js"> MongoDB 2d sphere </a></li>
+
 ### Oracle Spatial & Graph
+<li><a href="./OracleSpatialGraphschema.sql"> Oracle Spatial & Graph </a></li>
+
 ### PostGIS (PostgreSQL extension)
+<li><a href="./PostGISPostgreSQLextensionschema.sql"> PostGIS </a></li>
+
 ### Spatialite (SQLite geospatial extension)
+<li><a href="./SpatiaLiteSQLitegeospatialextschema.sql"> SQLite geospatial </a></li>
 
 
 ---
@@ -141,10 +154,171 @@ That Are Not Databases (but often mistaken as such). These are NOT databases, bu
 
 
 # Data Models
-
 ## Diagramming and charting tool
+### Mermaid ER Diagrams
+#### Geospatial Databases
 
-### Mermaid
+``` mermaid
+erDiagram
+    LOCATIONS ||--o{ EVENTS : "occurs_at"
+    LOCATIONS ||--o{ BOUNDARIES : "connected_to"
+    REGIONS ||--o{ LOCATIONS : "contains"
+    REGIONS ||--o{ REGIONS : "parent_of"
+    ASSETS ||--o{ ASSET_HISTORY : "tracks"
+    ASSETS ||--o{ ROUTES : "follows"
+    ASSETS ||--o{ EVENTS : "generates"
+    GEOFENCES ||--o{ ASSETS : "monitors"
+    RASTER_METADATA ||--o{ REGIONS : "overlaps"
+
+    LOCATIONS {
+        uuid location_id PK
+        string name
+        string location_type
+        geography geometry "POINT"
+        string address
+        string city
+        string country
+        string postal_code
+        double elevation_m
+        timestamp created_at
+        timestamp updated_at
+        json attributes
+    }
+
+    REGIONS {
+        uuid region_id PK
+        string name
+        string region_type
+        geography geometry "POLYGON/MULTIPOLYGON"
+        uuid parent_region_id FK
+        double area_sq_km
+        double perimeter_km
+        geography centroid
+        integer population
+        integer admin_level
+        string iso_code
+        timestamp created_at
+        timestamp updated_at
+        json attributes
+    }
+
+    BOUNDARIES {
+        uuid boundary_id PK
+        string name
+        string boundary_type
+        geography geometry "LINESTRING/MULTILINESTRING"
+        double length_km
+        uuid start_location_id FK
+        uuid end_location_id FK
+        string classification
+        string surface_type
+        double width_m
+        timestamp created_at
+        timestamp updated_at
+        json attributes
+    }
+
+    ROUTES {
+        uuid route_id PK
+        string name
+        string route_type
+        geography geometry "LINESTRING"
+        timestamp start_time
+        timestamp end_time
+        double distance_km
+        integer duration_seconds
+        uuid vehicle_id FK
+        uuid driver_id
+        array waypoints "POINT[]"
+        string status
+        timestamp created_at
+        timestamp updated_at
+        json attributes
+    }
+
+    EVENTS {
+        uuid event_id PK
+        string event_type
+        geography geometry "POINT"
+        timestamp event_time
+        string severity
+        uuid location_id FK
+        uuid asset_id FK
+        string source
+        double value
+        string unit
+        string description
+        timestamp created_at
+        json attributes
+    }
+
+    ASSETS {
+        uuid asset_id PK
+        string asset_name
+        string asset_type
+        geography current_geometry "POINT"
+        timestamp last_updated
+        double speed_kmh
+        double heading_degrees
+        double altitude_m
+        string status
+        uuid owner_id
+        geography trajectory "LINESTRING"
+        uuid geofence_id FK
+        double battery_level
+        timestamp created_at
+        json attributes
+    }
+
+    ASSET_HISTORY {
+        uuid history_id PK
+        uuid asset_id FK
+        geography geometry "POINT"
+        timestamp recorded_at
+        double speed_kmh
+        double heading_degrees
+        double altitude_m
+        double accuracy_m
+        string source
+        json attributes
+    }
+
+    GEOFENCES {
+        uuid geofence_id PK
+        string name
+        geography geometry "POLYGON/MULTIPOLYGON"
+        string geofence_type
+        boolean active
+        boolean trigger_on_enter
+        boolean trigger_on_exit
+        double buffer_m
+        timestamp valid_from
+        timestamp valid_until
+        uuid owner_id
+        timestamp created_at
+        json attributes
+    }
+
+    RASTER_METADATA {
+        uuid raster_id PK
+        string name
+        string raster_type
+        geography bounds "POLYGON"
+        geography centroid "POINT"
+        double resolution_m
+        integer bands
+        string crs
+        string file_path
+        double file_size_mb
+        timestamp acquisition_date
+        string source
+        timestamp created_at
+        json attributes
+    }
+
+```
+#### XYZ Financials Securities Data Model
+
 <li><a href="https://github.com/spusgh/Db-Scripts/tree/main/DbModels"> MS Power Platform Loan Ecosystem </a></li>
 
 
